@@ -1,0 +1,95 @@
+@media (max-width: 991px) {
+    .menu {
+        display: block!important;
+    }
+}
+a {
+    color: #000;
+    text-decoration: none;
+    transition: 0.5s;
+}
+a:hover {
+    color: #ccc18e;
+    text-decoration: none;
+}
+main {
+    font-family: "Inter", sans-serif;
+    background-color: #fffff0;
+}
+header {
+    border-bottom: 3px #000 solid;
+}
+.menu {
+    display: flex;
+    justify-content: end;
+    height: 100%;
+}
+.nav-item {
+    padding: 10px;
+    font-size: 16px;
+    color: #000000;
+    border-bottom: 3px solid #ffffff;
+}
+.nav-link {
+    color: #000;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.nav-link:hover {
+    color: #ccc18e;
+    text-decoration: none;
+}
+.nav-link-active{
+    border-bottom: 3px solid #ccc18e;
+}
+.ff-inter {
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+.ff-sen {
+    font-weight: 700;
+    font-family: 'Sen', sans-serif;
+}
+.ff-marck {
+    font-family: 'Marck Script', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+.btn-up {
+    position: fixed;
+    background-color: #673ab7;
+    right: 20px;
+    bottom: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 50px;
+    z-index: 100;
+}
+  
+.btn-up::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3E%3C/svg%3E");
+}
+  
+@media (hover: hover) and (pointer: fine) {
+    .btn-up:hover {
+      background-color: #512da8; /* цвет заднего фона при наведении */
+    }
+}
+
+
+
+footer {
+    max-height: 10vh;
+    background-color: #232536;
+    color: #6c757d;
+}

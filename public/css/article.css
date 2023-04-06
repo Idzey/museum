@@ -1,0 +1,6 @@
+main {
+    min-height: 80vh;
+}
+.article img {
+    max-height: 400px;
+}
