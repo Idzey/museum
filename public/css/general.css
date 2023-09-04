@@ -1,0 +1,117 @@
+@media (max-width: 991px) {
+    .menu {
+        display: block!important;
+    }
+    footer .fs-6 {
+        font-size: 0.65rem!important;
+    }
+}
+a {
+    color: #000;
+    text-decoration: none;
+    transition: 0.5s;
+}
+a:hover {
+    color: #0d6efd;
+    text-decoration: none;
+}
+main {
+    font-family: "Inter", sans-serif;
+    background-color: #FFEFD5; /*#fffff0*/
+    flex-grow: 1;
+}
+header {
+    border-bottom: 3px #000 solid;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #232536;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #42434d;
+}
+
+.menu {
+    display: flex;
+    justify-content: end;
+    height: 100%;
+}
+.nav-item {
+    padding: 10px;
+    font-size: 16px;
+    color: #000000;
+    border-bottom: 3px solid #ffffff;
+}
+.nav-link {
+    color: #000;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.nav-link:hover {
+    color: #0d6efd;
+    text-decoration: none;
+}
+.nav-link-active{
+    border-bottom: 3px solid #0d6efd;
+}
+.ff-inter {
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+.ff-sen {
+    font-weight: 700;
+    font-family: 'Sen', sans-serif;
+}
+.ff-marck {
+    font-family: 'Marck Script', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+.btn-up {
+    position: fixed;
+    background-color: #0d6efd;
+    right: 20px;
+    bottom: 3vh;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    z-index: 100;
+}
+.btn-up-notfooter {
+    bottom: 11vh;
+}
+  
+.btn-up::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3E%3C/svg%3E");
+}
+
+.articles img {
+    height: 100%;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+footer {
+    max-height: 10vh;
+    background-color: #232536;
+    color: #6c757d;
+    flex-shrink: 0;
+}

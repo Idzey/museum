@@ -1,0 +1,232 @@
+<!-- CREATED BY Idzey -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Marck+Script&family=Sen:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/general.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/activity.css">
+  <script src="js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="js/index.js" defer></script>
+  <script src="js/btn_up.js" defer></script>
+  <title>Музей | МКОУ Олымская СОШ</title>
+  <link rel="icon" href="assets/logo.png">
+</head>
+
+<body>
+  <header>
+    <nav class="container navbar navbar-expand-lg p-1" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="assets/logo.png" alt="Logo" width="48" height="48" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="w-100 menu">
+            <div class="navbar-nav g-2">
+              <div class="nav-item p-0">
+                <a class="nav-link nav-link-active" href="#">Главная</a>
+              </div>
+              <div class="nav-item p-0">
+                <a class="nav-link" href="/about">О музее</a>
+              </div>
+              <div class="nav-item p-0">
+                <a class="nav-link" href="/activity">Деятельность</a>
+              </div>
+              <div class="nav-item p-0">
+                <a class="nav-link" href="/articles">Статьи</a>
+              </div>
+              <div class="nav-item p-0">
+                <a class="nav-link" href="/documents">Документы</a>
+              </div>
+              <div class="nav-item p-0">
+                <a class="nav-link" href="/photos">Фотогалерея</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <a class="btn-up d-none" href="#navbar"></a>
+    <div class="block_1 p-0">
+      <h2 class="fs-2 ff-sen text-light text-center wow fadeInLeft"><span
+          class="text-uppercase ff-marck museum">Музей</span><br>
+        <span class="second-museum wow fadeInLeft">МКОУ «Олымская средняя общеобразовательная школа»</span>
+      </h2>
+    </div>
+    <div class="block_2 mt-4 wow fadeInUp">
+      <div class="container block_2 py-4">
+        <h2 class="fs-1 ff-sen border-bottom border-white border-2 pb-3">Знаете ли вы, что...</h2>
+
+        <div class="container block_2-text mt-5 d-flex flex-column justify-content-center">
+          <div class="row d-flex justify-content-center align-items-center wow fadeInUp">
+            <div class="col-lg-6 col-12 px-4 d-flex align-items-center justify-content-center">
+              <p class="mb-0">1-й Олымский свекло-сахарный завод учреждён в 1899 году для
+                переработки сахара и принадлежал Товариществу, учредителями
+                которого были землевладелец Воронежской губернии, тайный
+                советник Владимир Николаевич Охотников и инженер-технолог
+                Леонид Тимофеевич Пятаков.
+                Под заводскую усадьбу был выбран участок земли из имения
+                Благодать В. Н. Охотникова между железнодорожным полотном
+                Курско-Воронежской ж/д и небольшой рекой Олымь, которая и дала
+                название будущему сахарному заводу – Олымский.
+                Постройка завода и все необходимые при нём строения были
+                завершены в короткий срок, и 3 октября 1900 года он был запущен.
+                Так на карте Курской земли появился Олымский сахарный завод.</p>
+            </div>
+            <div class="col-lg-6 col-12 block_2__img d-flex justify-content-center">
+              <img src="assets/block-2_1.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="row mt-5 d-flex justify-content-center align-items-center wow fadeInUp">
+            <div class="col-lg-6 text-right col-12 px-4 d-flex align-items-center justify-content-center">
+              <p class="mb-0">История нашего посёлка напрямую связана с Олымским сахарным заводом,
+                который был учреждён в 1899 году для переработки свёклы.
+                Военные лихолетья не обошли наш посёлок. Сначала гражданская война.
+                Затем Великая Отечественная война. В начале 1942 года наш посёлок. Как и весь
+                Касторенский район был оккупирован. По окончанию войны олымчане стали налаживать мирную жизнь,
+                восстанавливать промышленность и сельское хозяйство.
+                В начале 60-х годов начинает строиться новый Олымский сахарный завод.
+                Одновременно начинают строить дома для рабочих. Постепенно вырастает улица 20-е
+                Победы с многоэтажными домами по обе стороны. Новый завод вступает в строй в 1962
+                году.
+                С 1965 года наш посёлок имеет статус посёлка городского типа.</p>
+            </div>
+            <div class="col-lg-6 col-12 block_2__img d-flex justify-content-center">
+              <img src="assets/block-2_2.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="row mt-5 d-flex justify-content-center align-items-center wow fadeInUp">
+            <div class="col-lg-6 col-12 px-4 d-flex align-items-center justify-content-center ">
+              <p class="mb-0">История нашей школы неразрывно связана с историей нашего посёлка,
+                который появился одновременно со строительством 1-го Олымского
+                сахарного завода, вступившего в строй в 1900 году.
+                Шли годы. Менялся посёлок, менялись школьные здания.
+                Со строительством 2-го сахарного завода посёлок вырос, увеличилось его
+                население. И 15 ноября 1961 года новая трёхэтажная школа распахнула свои
+                двери для более чем 400 учеников. Через пару лет в ней училось уже 1000
+                школьников.
+                Школа – важная, неотъемлемая часть нашей жизни, наш второй дом. <br><span class="fw-bold">Мы
+                  гордимся нашей школой!</span></p>
+            </div>
+            <div class="col-lg-6 col-12 block_2__img d-flex justify-content-center">
+              <img src="assets/block-2_3.jpg" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid block-3 py-3">
+      <div class="container">
+        <div class="row" id="articles">
+          <h2 class="pb-3 border-bottom border-white border-2 mt-5 fs-1 ff-sen">Последние статьи</h2>
+          <div
+            class="col-lg-9 col-md-12 wow fadeInLeft block_articles d-flex flex-column border-end border-white border-3 d-flex">
+            <div class="d-flex flex-column mt-5 articles">
+
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+              <a href="/articles" class="btn btn-primary">Смотреть больше...</a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-12 py-4 wow fadeInLeft">
+            <h3 class="pb-3">Категории</h3>
+            <div class="g-2 row categories">
+              <div class="category col-lg-12 col-6">
+                <div class="card p-1 {{#if category.all}}category_active{{/if}}">
+                  <div class="card-body d-flex align-items-center gap-2">
+                    <img src="assets/icons/all.svg" alt="" width="40">
+                    <h5 class="card-title ff-sen mb-0">Все</h5>
+                  </div>
+                </div>
+              </div>
+              <div id="Школа" class="category col-lg-12 col-6">
+                <div class="card p-1 {{#if category.School}}category_active{{/if}}">
+                  <div class="card-body d-flex align-items-center gap-2">
+                    <img src="assets/logo.png" alt="" width="40">
+                    <h5 class="card-title ff-sen mb-0">Школа</h5>
+                  </div>
+                </div>
+              </div>
+              <div id="Посёлок" class="category col-lg-12 col-6">
+                <div class="card p-1 {{#if category.Village}}category_active{{/if}}">
+                  <div class="card-body d-flex align-items-center gap-2">
+                    <img src="assets/icons/village.png" alt="" width="40">
+                    <h5 class="card-title ff-sen mb-0">Посёлок</h5>
+                  </div>
+                </div>
+                </d>
+              </div>
+              <div id="Разное" class="category col-lg-12 col-6">
+                <div class="card p-1 {{#if category.Interesting}}category_active{{/if}}">
+                  <div class="card-body d-flex align-items-center gap-2">
+                    <img src="assets/icons/different.png" alt="" width="40">
+                    <h5 class="card-title ff-sen mb-0">Разное</h5>
+                  </div>
+                </div>
+                </d>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container block-4 mt-5 wow fadeInUp">
+        <h2 class="pb-3 border-bottom border-white border-2 mt-5 fs-1 ff-sen">Деятельность музея</h2>
+        <div class="row d-flex justify-content-center gap-3 align-items-stretch py-4 activity">
+          
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+            <a href="/activity" class="btn btn-primary">Смотреть больше...</a>
+        </div>
+      </div>
+      <div class="container-fluid block-5 mt-5 wow fadeInUp">
+        <div class="container py-5 border-top border-white border-2">
+          <div class="d-flex px-5 block_4__text flex-column gap-3 justify-content-center align-items-center">
+            <h2 class="fs-1 ff-sen text-center text-primary">Внимание</h2>
+            <p class="text-muted text-center ">Уважаемые гости, если у вас есть интересные материалы<br>для
+              нашего сайта присылайте на почту:</p>
+            <span class="ff-sen bg-secondary p-2 text-light">museum.olimsky.school@gmail.com</span>
+          </div>
+        </div>
+      </div>
+  </main>
+  <footer class="container-fluid d-flex align-items-center py-4">
+    <div class="container footer_adress d-flex justify-content-between align-items-center">
+      <div class="d-flex flex-column justify-content-between">
+        <p class="text-light fw-bold fs-6 mb-0">Курская обл., п. Олымский, ул. Садовая, д. 37</p>
+        <p class="text-light fw-bold fs-6 mb-0">museum.olimsky.school@gmail.com</p>
+      </div>
+      <div class="d-flex gap-2">
+        <a href="https://vk.com/club215571146"><img src="assets/icons/icon_vk.png" alt="" width="32" height="32"></a>
+        <a href="https://ok.ru/group/59275522867287"><img src="assets/icons/icon_odnk.png" alt="" width="32"
+            height="32"></a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.tiny.cloud/1/un0l93ln91b5wx2otzu6p07jssv0ytc8a9cdmol7wphmhzzm/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Marck+Script&family=Sen:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+        tinymce.init({
+            selector: 'textarea#text',
+            toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolory | outdent indent',
+            plugins: 'code'
+        });
+    </script>
+    <script src="js/index.js" defer></script>
+    <title>Музей | МКОУ Олымская СОШ</title>
+    <link rel="icon" href="assets/logo.png">
+    <style>
+        .articles {
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container navbar navbar-expand-lg p-1" id="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="assets/logo.png" alt="Logo" width="48" height="48" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="w-100 menu">
+                        <div class="navbar-nav g-2">
+                            <div class="nav-item p-0">
+                                <a class="nav-link" href="/">Главная</a>
+                            </div>
+                            <div class="nav-item p-0">
+                                <a class="nav-link" href="/about">О музее</a>
+                            </div>
+                            <div class="nav-item p-0">
+                                <a class="nav-link" href="/activity">Деятельность</a>
+                            </div>
+                            <div class="nav-item p-0">
+                                <a class="nav-link nav-link-active" href="/articles">Статьи</a>
+                            </div>
+                            <div class="nav-item p-0">
+                                <a class="nav-link" href="/documents">Документы</a>
+                            </div>
+                            <div class="nav-item p-0">
+                                <a class="nav-link" href="/photos">Фотогалерея</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <a class="btn-up d-none" href="#navbar"></a>
+        <div class="container-fluid block-3 py-5">
+            <div class="container">
+                <div class="row" id="articles">
+                    <h2 class="pb-3 border-bottom border-white border-2 fs-1 ff-sen">Админ панель | Статьи</h2>
+                    <div class="col-12 border-bottom border-white border-2 py-2">
+                        <form action="/create-article" method="POST" enctype="multipart/form-data">
+                            <div class="mb-3 col-12">
+                                <label for="inp_title" class="form-label">Заголовок новой статьи</label>
+                                <input type="text" name="title" id="inp_title" class="form-control" required>
+                            </div>
+                            <div class="mb-3 col-12">
+                                <label for="inp_description" class="form-label">Краткое описание новой статьи</label>
+                                <textarea name="description" id="inp_description" class="form-control" rows="10"
+                                    required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inp_text" class="form-label">Текст новой статьи</label>
+                                <textarea name="text" id="text" class="form-control" rows="45"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <p class="form-label">Категории новой статьи</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="check_school" type="checkbox" id="check1">
+                                    <label class="form-check-label" for="check1">
+                                        Школа
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="check_village" type="checkbox" id="check2">
+                                    <label class="form-check-label" for="check2">
+                                        Посёлок
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="check_different" type="checkbox" id="check3">
+                                    <label class="form-check-label" for="check3">
+                                        Разное
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mb-3 col-lg-4 col-md-6 col-sm-12">
+                                <label for="inp_filedata" class="form-label">Изображение новой статьи</label>
+                                <input type="file" name="filedata" id="inp_filedata" class="form-control">
+                            </div>
+                            <button class="btn btn-primary mt-3">Создать</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-9 col-md-12 wow fadeInLeft block_articles d-flex">
+                        <div class="d-flex flex-column mt-5 articles">
+                            <div class="d-flex align-items-center p-2">
+                                <div class="form-check form-switch">
+                                    <input class="conf-delete form-check-input" type="checkbox">
+                                    <label class="form-check-label text-danger">ВОЗМОЖНОСТЬ УДАЛЕНИЯ</label>
+                                </div>
+                            </div>
+                            {{#each articles}}
+                            <a href="/article?id={{this._id}}" class="article wow fadeInLeft">
+                                <article
+                                    class="row justify-content-center {{#if this.img_flag}}justify-content-start{{/if}}">
+                                    <div
+                                        class="{{#if this.img_flag}}d-none{{/if}} col-lg-4 col-md-12 d-flex align-items-center justify-content-center">
+                                        <img src="{{this.image}}" alt="" class="img-fluid" loading="lazy">
+                                    </div>
+                                    <div class="{{#if this.img_flag}}col-lg-9{{/if}} col-lg-8 col-md-12 article_text">
+                                        {{#each this.category}}
+                                        <span class="text-uppercase badge bg-primary">{{this}}</span>
+                                        {{/each}}
+                                        <h2 class="ff-sen">{{this.title}}</h2>
+                                        <p class="text-muted">{{this.description}}</p>
+                                    </div>
+                                </article>
+                            </a>
+                            <a href="/delete-article?id={{this._id}}"
+                                class="btn btn-delete btn-danger col-3 mt-1 mb-5">Удалить</a>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="container-fluid d-flex align-items-center">
+        <div class="container mt-4 mb-4 footer_adress d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-column justify-content-between">
+                <p class="text-light fw-bold fs-6 mb-0">Курская обл., п. Олымский, ул. Садовая, д. 37</p>
+                <p class="text-light fw-bold fs-6 mb-0">test@gmail.com +7 (800) 535-35-35 </p>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="#"><img src="assets/icons/icon_vk.png" alt="" width="32" height="32"></a>
+                <a href="#"><img src="assets/icons/icon_odnk.png" alt="" width="32" height="32"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

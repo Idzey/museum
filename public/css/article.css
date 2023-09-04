@@ -1,0 +1,18 @@
+@media (max-width: 991px) {
+    .article-text {
+        font-size: 1.1em!important;
+    }
+}
+main {
+    min-height: 80vh;
+}
+.article img {
+    max-height: 400px;
+}
+.col-9 {
+    width: auto;
+    max-width: 75%;
+} 
+.article-text {
+    font-size: 1.2em;
+}

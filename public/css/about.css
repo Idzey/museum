@@ -1,0 +1,8 @@
+@media (max-width: 991px) {
+    .fs-5 {
+        font-size: medium!important;
+    }
+}
+.color-blue {
+    color: #2E4A6D;
+}

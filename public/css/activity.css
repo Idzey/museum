@@ -1,0 +1,14 @@
+@media (max-width: 991px) {
+    .card {
+        width: 10rem!important;
+    }
+}
+.card-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.card-img-top {
+    max-height: 300px;
+}

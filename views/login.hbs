@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Marck+Script&family=Sen:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="js/index.js" defer></script>
+    <title>Музей | МКОУ Олымская СОШ</title>
+    <link rel="icon" href="assets/logo.png">
+</head>
+
+<body>
+    <main>
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="row w-100 d-flex justify-content-center">
+                <div class="col-lg-6 col-sm-12 border border-primary border-3 card p-5 d-block">
+                    <form action="/login" method="POST">
+                        <div class="mb-3">
+                            <label for="login" class="form-label">Логин:</label>
+                            <input type="text" name="login" id="login" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Пароль:</label>
+                            <input type="password" name="password" id="password" class="form-control">
+                        </div>
+                        {{#if err}}
+                            <p class="text-bg-danger rounded p-2">Неправильно набран логин или пароль!</p>
+                        {{/if}}
+                        <button type="submit" class="btn btn-primary">Войти</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
