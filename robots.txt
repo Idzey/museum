@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /admin
+Disallow: /admin-link
+Disallow: /login
+Disallow: /gallery/album-admin
+Disallow: /create-album
+Disallow: /create-document
+Disallow: /create-article
+Disallow: /create-post
+Disallow: /articles/category
