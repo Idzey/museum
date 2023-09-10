@@ -76,24 +76,25 @@
     </header>
     <main>
         <div class="container py-4 block_1">
-            <h1 class="ff-sen pb-2 border-bottom border-white border-2">Админ панель | Деятельность</h1>
+            <h1 class="ff-sen pb-2 border-bottom border-white border-2">{{#if post}}Изменить | {{/if}}Админ панель | Деятельность</h1>
             <div class="row mb-4 border-bottom border-white border-2 py-2">
+                <div class="d-flex justify-content-end"><a href="/create-article" class="btn btn-primary mt-3 col-2 mt-4">Создать новую статью</a></div>
                 <div class="col-12">
-                    <form action="/create-post" method="POST" enctype="multipart/form-data">
+                    <form {{#if post}}action="/edit-post?id={{post._id}}"{{else}}action="/create-post"{{/if}} method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="title" class="form-label col-12">Название</label>
-                            <input type="text" name="title" id="title" class="form-control" placeholder="..." required>
+                            <input type="text" name="title" id="title" class="form-control" placeholder="..." required value="{{post.title}}">
                         </div>
                         <div class="mb-3">
                             <label for="inp_text" class="form-label col-12">Текст</label>
-                            <textarea name="text" id="text" class="form-control" rows="15"></textarea>
+                            <textarea name="text" id="text" class="form-control" rows="15">{{post.text}}</textarea>
                         </div>
                         <div class="mb-3 col-6">
                             <label for="image" class="form-label">Изображение</label>
-                            <input type="file" name="filedata" id="image" class="form-control" placeholder="..."
+                            <input type="file" name="filedata" id="image" class="form-control" placeholder="..." {{#if post}} disabled {{/if}}
                                 required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Отправить</button>
+                        {{#if post}} <button class="btn btn-primary mt-3">Изменить</button> {{else}}<button class="btn btn-primary mt-3">Создать</button>{{/if}}
                     </form>
                     {{#if success}}<p class="text-center text-bg-success mt-3">Успешно</p>{{/if}}
                     {{#if error}}<p class="text-center text-bg-danger mt-3">Ошибка</p>{{/if}}
@@ -117,11 +118,16 @@
                                 <div class="card-body">
                                     <h5 class="card-title fw-bold">{{this.title}}</h5>
                                     <p class="card-subtitle mb-2 text-body-secondary">{{this.date}}</p>
-                                    <p class="card-text border-top pt-1">{{{this.text}}}</p>
+                                    <p class="card-text border-top pt-1"><div class="card-text">{{{this.text}}}</div></p>
                                 </div>
                             </a>
                         </div>
-                        <a href="/delete-post?id={{this._id}}" class="col-4 mt-2 btn-delete btn btn-danger">Удалить</a>
+                        <div class="d-flex gap-2">
+                                <a href="/edit-post?id={{this._id}}"
+                                class="btn btn-primary col-6 mt-1 mb-5">Редактировать</a>
+                                <a href="/delete-post?id={{this._id}}"
+                                class="btn btn-delete btn-danger col-5 mt-1 mb-5">Удалить</a>
+                            </div>
                     </div>
                     {{/each}}
                 </div>

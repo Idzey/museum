@@ -528,8 +528,65 @@ app.get(`/create-article`, async function (req, res) {
                 article.img_flag = false;
             }
         }
-
         res.render(`create-article`, { articles: data });
+    } else {
+        res.redirect(`/admin`);
+    }
+});
+
+app.get(`/edit-article`, async function (req, res) {
+    if ((await Admin.find({ login: req.session.login, password: req.session.pass })).length > 0) {
+        let data = await Article.find().sort({createdAt: -1});
+        for (let i = 0; i < data.length; i++) {
+            let article = data[i];
+            if (!article.image) {
+                article.img_flag = true;
+            } else {
+                article.img_flag = false;
+            }
+        }
+
+        let id = req.query.id;
+        let article = await Article.findOne({_id: id});
+        for (let i = 0; i < article.category.length; i++) {
+            let item = article.category[i];
+            article[`${item}`] = true;
+        }
+
+        res.render(`create-article`, { articles: data, article: article });
+    } else {
+        res.redirect(`/admin`);
+    }
+});
+
+app.post(`/edit-article`, upload2.single("filedata"), async function (req, res) {
+    if ((await Admin.find({ login: req.session.login, password: req.session.pass })).length > 0) {
+        let article = await Article.findOne({_id: req.query.id});
+
+        article.title = req.body.title;
+        article.text = req.body.text;
+        article.description = req.body.description;
+        let category = [];
+
+        if (req.body.check_school == `on`) {
+            category.push('Школа');
+        }
+        if (req.body.check_village == `on`) {
+            category.push('Посёлок');
+        }
+        if (req.body.check_different == `on`) {
+            category.push('Разное');
+        }
+
+        article.category = category;
+
+        try {
+            await article.save();
+
+            res.redirect(`/create-article?success=1`);
+        } catch (err) {
+            res.redirect(`/create-article?error=1`);
+        }
     } else {
         res.redirect(`/admin`);
     }
@@ -658,6 +715,21 @@ app.get(`/create-post`, async function (req, res) {
     }
 });
 
+app.get(`/edit-post`, async function (req, res) {
+    if ((await Admin.find({ login: req.session.login, password: req.session.pass })).length > 0) {
+        let success = req.query.success;
+        let error = req.query.error;
+        let posts = await Post.find().sort({createdAt: -1});
+
+        let post = await Post.findOne({_id: req.query.id});
+
+
+        res.render(`create-post`, { posts: posts, success: success, error: error, post: post });
+    } else {
+        res.redirect(`/admin`);
+    }
+});
+
 app.post(`/create-post`, upload3.single("filedata"), async function (req, res) {
     if ((await Admin.find({ login: req.session.login, password: req.session.pass })).length > 0) {
         try {
@@ -673,6 +745,25 @@ app.post(`/create-post`, upload3.single("filedata"), async function (req, res) {
             await post.save();
 
             let filedata = req.file;
+            res.redirect(`/create-post?success=1`);
+        } catch (err) {
+            res.redirect(`/create-post?error=1`);
+        }
+    } else {
+        res.redirect(`/admin`);
+    }
+});
+
+app.post(`/edit-post`, upload3.single("filedata"), async function (req, res) {
+    if ((await Admin.find({ login: req.session.login, password: req.session.pass })).length > 0) {
+        try {
+            let post = await Post.findOne({_id: req.query.id});
+
+            post.title = req.body.title;
+            post.text = req.body.text;
+
+            await post.save();
+
             res.redirect(`/create-post?success=1`);
         } catch (err) {
             res.redirect(`/create-post?error=1`);
