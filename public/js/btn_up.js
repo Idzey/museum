@@ -1,10 +1,11 @@
 let btnUp = document.querySelector(`.btn-up`);
+btnUp.classList.remove('d-none')
 window.addEventListener(`scroll`, function () {
     let scrollY = window.scrollY;
     if (scrollY > 70) {
-        btnUp.classList.remove('d-none');
+        btnUp.classList.add('active');
     } else {
-        btnUp.classList.add('d-none');
+        btnUp.classList.remove('active');
     }
 
     window.onscroll = function(evt) {
