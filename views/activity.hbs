@@ -77,13 +77,18 @@
                             <label for="date" class="label-control ff-sen mb-1">Сортировать по дате:</label>
                             <div class="d-flex flex-wrap justify-content-between g-3">
                                 <div class="d-flex gap-3 mb-3">
-                                    <input type="date" name="date" id="date" value="{{date}}" class="form-control col-lg-4 col-md-6 col-sm-9">
+                                    <input type="date" name="date" id="date" value="{{date}}" class="form-control col-sm-9 col-lg-4 col-md-6">
                                     <button type="submit" class="btn btn-primary">Ок</button>
                                 </div>
                                 <div class=""><a href="/activity" class="btn btn-danger">Сбросить</a></div>
                             </div>
                         </div>
                     </form>
+                    {{#if notPosts}}
+                        <div class="py-4">
+                            <h2 class="fw-bold text-center fs-1">Нет результатов!</h2>
+                        </div>
+                    {{else}}
                     {{#each posts}}
                     <div class="card p-0 wow fadeInLeft" style="width: 18rem;">
                         <a href="/post?id={{this._id}}">
@@ -96,6 +101,7 @@
                         </a>
                     </div>
                     {{/each}}
+                    {{/if}}
                 </div>
             </div>
         </div>

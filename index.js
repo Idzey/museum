@@ -161,7 +161,12 @@ app.get(`/articles`, async (req, res) => {
         `;
     }
 
-    res.render(`articles`, { articles: data, value: saveValue, select: select, pagination: node});
+    let notArticles = false;
+    if (data.length == 0) {
+        notArticles = true;
+    };
+
+    res.render(`articles`, { articles: data, value: saveValue, select: select, pagination: node, notArticles: notArticles});
 });
 
 app.get('/articles/category', async (req,res) => {
@@ -259,8 +264,12 @@ app.post('/activity/date', async function (req,res) {
             let post = posts[i];
             post.date = dayjs(post.createdAt).format("DD.MM.YYYY");
         }
+        let notPosts = false;
+        if (posts.length == 0) {
+            notPosts = true;
+        };
 
-        res.render('activity', {posts: posts, date: req.body.date});
+        res.render('activity', {posts: posts, date: req.body.date, notPosts: notPosts});
     } else {
         res.redirect('/activity');
     }

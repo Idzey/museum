@@ -71,8 +71,13 @@
       <div class="container">
         <div class="row" id="articles">
           <h2 class="pb-3 border-bottom border-white border-2 fs-1 ff-sen">Статьи</h2>
-          <div class="col-lg-9 col-md-12 wow fadeInLeft block_articles border-end border-white border-3 d-flex">
+          <div class="col-lg-9 col-md-12 wow fadeInLeft block_articles justify-content-center border-end border-white border-3 d-flex">
             <div class="d-flex flex-column mt-4 articles">
+              {{#if notArticles}}
+              <div class="py-5">
+                <h2 class="fw-bold text-center fs-1">Нет результатов!</h2>
+              </div>
+              {{else}}
               {{#each articles}}
               <a href="/article?id={{this._id}}" class="article wow fadeInLeft">
                 <article class="row justify-content-center {{#if this.img_flag}}justify-content-start{{/if}}">
@@ -89,6 +94,7 @@
                 </article>
               </a>
               {{/each}}
+              {{/if}}
             </div>
           </div>
           <div class="col-lg-3 col-md-12 py-4 wow fadeInLeft">
@@ -122,6 +128,7 @@
                   </label>
                 </div>
                 <button type="submit" class="btn btn-primary mt-3">ОК</button>
+                <a class="btn btn-danger mt-3" href="/articles">Сбросить</a>
               </form>
             </div>
           </div>
