@@ -111,6 +111,8 @@ function renderActivity(data) {
     let node = ``;
     for (let i = 0; i < data.length; i++) {
         let activity = data[i];
+        let text = activity.text;
+        text = text.replace(/<(.|\n)*?>/g, '');
         node += `
           <div class="card p-0 wow fadeInLeft" style="width: 18rem;">
             <a href="/post?id=${activity._id}">
@@ -118,7 +120,7 @@ function renderActivity(data) {
               <div class="card-body">
                 <h5 class="card-title fw-bold">${activity.title}</h5>
                 <p class="card-subtitle mb-2 text-body-secondary">${dayjs(activity.createdAt).format("DD.MM.YYYY")}</p>
-                <p class="card-text border-top pt-1">${activity.text}</p>
+                <p class="card-text border-top pt-1">${text}</p>
               </div>
             </a>
           </div>
