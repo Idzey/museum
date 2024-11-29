@@ -13,7 +13,7 @@ app.set('views', 'views');
 let dayjs = require('dayjs');
 
 let mongoose = require(`mongoose`);
-mongoose.connect("mongodb+srv://Admin:UcH-MF2-QnN-CtJ@museum.gro82ka.mongodb.net/museum");
+mongoose.connect("mongodb://127.0.0.1:27017/museum");
 
 app.use(express.static(`public`));
 app.use(express.urlencoded({ extended: true }));
